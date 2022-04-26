@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" contents="IG-edge">
+        <meta name="viewpoint"content="width=device-width,initial-scale=1.0">
+        <title>EB BILL CALCULATOR</title>
+    </head>
+    <body>
+        <form>
+            <label>NAME:</label>
+            <input type="text">
+            <br> <br>
+            <label>NUMBER:</label>
+            <input type="number" id="num1"> <br><br>
+            <label>LAST MONTH READING</label>
+            <input type="number" id="num2"> <br><br>
+            <label>PRESENT MONTH READING</label>
+            <input type="number" id="num3"> <br><br>
+            <button onclick="calculate()"> CALCULATE</button>
+        </form>
+        <script>
+            function calculate(){
+                var v1=document.getElementById("num1");
+                var v2=document.getElementById("num2");
+                var v3=document.getElementById("num3");
+                units=parseInt(v3.value)-parseInt(v2.value);
+                alert(units)
+                bill=0
+                if(units<=50){
+                    bill=units*1
+                }
+                else if(units<=150){
+                    bill=50*1+(units-50)*2
+                }
+                else if(units<=250){
+                    bill=50*1+100*2+(units-150)*3
+                }
+                else if(units<=150){
+                    bill=50*1+100*2+150*3+(units-50)*4
+                }
+                if(bill>150){
+                    bill=bill+bill*0.2
+                }
+                alert(bill)
+            }
+        </script>
+    </body>
+</html>
